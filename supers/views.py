@@ -51,5 +51,26 @@ def supers_by_id(request, id) :
         serializer = SuperSerializer(supers_by_id, many=True)
         return Response(serializer.data)
     else:
-        return Response("No cars of that make in the database!", status=status.HTTP_404_NOT_FOUND)
-      
+        return Response("No supers matching that description in the database!", status=status.HTTP_404_NOT_FOUND)
+
+@api_view(['GET'])
+def supers(request):
+
+    if request.method == 'GET':
+
+        super_type_param = request.query_params.get('super_type')
+        sort_param = request.query_params.get('sort')
+
+        print(super_type_param)
+        print(sort_param)
+
+        queryset = Super.objects.all()
+
+        if super_type_param:
+            queryset = queryset.filter(super_type=super_type)
+
+        if sort_param:
+            supers = supers(sort_param)
+
+        serializer = SuperSerializer(queryset, many=True)
+        return Response(serializer.data)
