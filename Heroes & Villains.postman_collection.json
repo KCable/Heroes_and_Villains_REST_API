@@ -1,0 +1,229 @@
+{
+	"info": {
+		"_postman_id": "ad6fd46b-41e3-47d2-972e-6fd248450d10",
+		"name": "Heroes & Villains",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28546897"
+	},
+	"item": [
+		{
+			"name": "Supers(supers App)",
+			"item": [
+				{
+					"name": "GET all supers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/supers/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"supers",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get_All_Heroes (Params)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/supers?type=hero",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"supers"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "hero"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get_All_Villains (Params)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/supers?type=villain",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"supers"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "villain"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET super by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/supers/4/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"supers",
+								"4",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE new super to db",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Joker Two\",\r\n    \"alter_ego\": \"Jack Napier\",\r\n    \"primary_ability\": \"Chemical engineering\",\r\n    \"secondary_ability\": \"Razor-tipped playing cards\",\r\n    \"catchphrase\": \"Why so serious?\",\r\n    \"super_type_id\": \"2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/supers/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"supers",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE existing super in db",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"name\": \"Joker\",\r\n    \"alter_ego\": \"Jack Napier\",\r\n    \"primary_ability\": \"Chemical engineering\",\r\n    \"secondary_ability\": \"Razor-tipped playing cards\",\r\n    \"catchphrase\": \"\\\"Why so serious\\\"\",\r\n    \"super_type\": {\r\n        \"id\": 2,\r\n        \"type\": \"villain\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/supers/5/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"supers",
+								"5",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE super",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/supers/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"supers",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Super_Types (super_types App)",
+			"item": []
+		}
+	]
+}
