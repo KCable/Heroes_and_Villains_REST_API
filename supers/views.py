@@ -14,9 +14,10 @@ def super(request):
         print(super_type)
 
         queryset = Super.objects.all()
+        
 
         if super_type:
-            queryset = queryset.filter(super_type=super_type)
+            queryset = queryset.filter(super_type_id=super_type)
 
         serializer = SuperSerializer(queryset, many=True)
         return Response(serializer.data)
